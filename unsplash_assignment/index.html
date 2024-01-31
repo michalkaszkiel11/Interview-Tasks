@@ -6,10 +6,66 @@
         <title>unsplash</title>
         <script type="module" src="./index.js"></script>
         <link rel="stylesheet" href="index.css" />
+        <script
+            src="https://kit.fontawesome.com/7cc7365c35.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <div id="views"></div>
-        <div id="likes"></div>
-        <div id="country"></div>
+        <header>
+            <div class="breaker"></div>
+            <div class="hed">
+                <i class="fa-solid fa-palette"></i>
+                <h1>Unsplash Dispalyer</h1>
+                <i class="fa-solid fa-paintbrush"></i>
+            </div>
+            <div class="breaker"></div>
+            <nav class="menu">
+                <div>
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <a href="#fire" class="link">Hot</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                    <a href="#gold" class="link"> Classics </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-heart"></i>
+                    <a href="#heart" class="link">Popular </a>
+                </div>
+            </nav>
+        </header>
+        <div class="views_box" id="fire">
+            <div id="views"></div>
+            <div class="title_views">
+                <h3>Mostly viewed</h3>
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+        </div>
+        <div class="break">
+            <div class="break_p"></div>
+        </div>
+        <div class="likes_box" id="gold">
+            <div class="title_likes">
+                <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                <h3>Oldy but goldy</h3>
+            </div>
+            <div id="likes"></div>
+        </div>
+        <div class="break"><div class="break_m"></div></div>
+        <div class="country_box" id="heart">
+            <div id="country"></div>
+            <div class="title_country">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Users are in love with:</h3>
+            </div>
+        </div>
+        <div class="break"><div class="break_n"></div></div>
     </body>
 </html>

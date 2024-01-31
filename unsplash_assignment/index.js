@@ -69,10 +69,11 @@ const paramsViews = {
     views: `>${millionViews}`,
 };
 const paramsLikes = {
-    likes: `<${thousandLikes}`,
+    // likes: `<${thousandLikes}`,
+    order_by: "oldest",
 };
 const paramsUs = {
-    order_by: country,
+    order_by: "popular",
 };
 fetchImages(paramsViews)
     .then((images) => {
@@ -97,6 +98,40 @@ fetchImages(paramsUs)
         }
     })
     .catch((err) => console.log(err));
+
+const viewsBox = document.querySelector(".views_box");
+const likesBox = document.querySelector(".likes_box");
+const countryBox = document.querySelector(".country_box");
+const handleOpacity = function (e, classed, opacity) {
+    if (e.target.classList.contains(classed)) {
+        const image = e.target;
+        const siblings = document.querySelectorAll(`.${classed}`);
+        siblings.forEach((img) => {
+            if (img !== image) {
+                img.style.opacity = opacity;
+            }
+        });
+    }
+};
+
+viewsBox.addEventListener("mouseover", (e) => handleOpacity(e, "views", 0.25));
+viewsBox.addEventListener("mouseout", (e) => handleOpacity(e, "views", 1));
+likesBox.addEventListener("mouseover", (e) => handleOpacity(e, "likes", 0.25));
+likesBox.addEventListener("mouseout", (e) => handleOpacity(e, "likes", 1));
+countryBox.addEventListener("mouseover", (e) =>
+    handleOpacity(e, "country", 0.25)
+);
+countryBox.addEventListener("mouseout", (e) => handleOpacity(e, "country", 1));
+
+const navBar = document.querySelector(".menu");
+navBar.addEventListener("click", function (e) {
+    e.preventDefault();
+    console.log(e.target);
+    if (e.target.classList.contains("link")) {
+        const id = e.target.getAttribute("href");
+        document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
+});
 
 // const getData = async () => {
 //     try {
