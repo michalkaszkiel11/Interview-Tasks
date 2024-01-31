@@ -7,88 +7,39 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: aliceblue;
-    flex-direction: column;
-}
-nav {
-    width: 100vw;
-    height: 8vh;
-    background-color: rgb(255, 255, 255);
-}
-.navbar {
-    float: right;
-    width: 50%;
-    height: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-.navbar > li {
-    padding: 1rem 2rem 1rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navbar > li > a {
-    text-decoration: none;
-    color: black;
-}
-.box_main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 242, 183, 1) 100%
-    );
-}
-.box_sub {
-    display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
-    height: 90%;
+    background: aliceblue;
+    flex-direction: row;
 }
-.box_sub > .rec_1,
-.rec_2,
-.rec_3 {
+#views {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
+    width: 30vw;
+    height: 100%;
 }
-.content_1,
-.content_3 {
-    width: 400px;
-    height: 550px;
-    background: white;
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    color: white;
-    box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
+#likes {
+    display: flex;
+    width: 30vw;
+    height: 100%;
 }
-.content_2 {
-    width: 400px;
-    height: 225px;
-    background: white;
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    color: white;
-    box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
+#country {
+    display: flex;
+    width: 30vw;
+    height: 100%;
 }
-h2 {
-    color: black;
+.views {
+    width: 5rem;
+    height: fit-content;
 }
-#getData {
-    width: 10rem;
-    height: 5rem;
-    background-color: blanchedalmond;
+.likes {
+    width: 5rem;
+    height: fit-content;
+}
+.country {
+    width: 5rem;
+    height: fit-content;
+}
+#country > img {
+    width: 5rem;
+    height: fit-content;
 }
