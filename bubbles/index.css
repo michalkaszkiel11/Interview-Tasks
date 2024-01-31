@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    flex-direction: column;
+    gap: 2rem;
+}
+.aquarium {
+    width: 40vw;
+    height: 20vh;
+    background-image: url(./aquarium.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.bubble {
+    width: 5vw;
+    height: 5vh;
+    transition: all 10s ease;
+    background-image: url(./bubble.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
