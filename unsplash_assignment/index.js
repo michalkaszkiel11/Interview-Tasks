@@ -1,7 +1,7 @@
 const accessKey = "Wch0aMrYh-xzLjeB5doI67ADdjjmJ24pw8dtHB7rCj8";
 const apiUrl = "https://api.unsplash.com/photos";
 const millionViews = 1000000;
-const thousandLikes = 1000;
+const thousandLikes = 10;
 const country = "US";
 
 async function fetchData(url) {
@@ -53,14 +53,14 @@ async function displayImagesLikes(images) {
         imageElement.classList.add("likes");
     });
 }
-async function displayByCountry(country) {
+async function displayByCountry(images) {
     const countryEl = document.getElementById("country");
     countryEl.innerHTML = "";
-    country.forEach((country) => {
+    images.forEach((country) => {
         const imageElement = document.createElement("img");
         imageElement.src = country.urls.regular;
         countryEl.appendChild(imageElement);
-        countryEl.classList.add("country");
+        imageElement.classList.add("country");
     });
 }
 
@@ -69,10 +69,10 @@ const paramsViews = {
     views: `>${millionViews}`,
 };
 const paramsLikes = {
-    likes: `>${thousandLikes}`,
+    likes: `<${thousandLikes}`,
 };
 const paramsUs = {
-    order_by: `${country}`,
+    order_by: country,
 };
 fetchImages(paramsViews)
     .then((images) => {
@@ -121,7 +121,7 @@ fetchImages(paramsUs)
 //             const imageEl = document.createElement("img");
 //             imageEl.src = data.urls.regular;
 //             countryEl.appendChild(imageEl);
-//             countryEl.classList.add("country");
+//             imagesEl.classList.add("country");
 //         });
 //     } catch (error) {
 //         console.error(error);

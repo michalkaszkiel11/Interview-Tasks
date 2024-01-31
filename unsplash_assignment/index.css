@@ -16,30 +16,36 @@ body {
     display: flex;
     width: 30vw;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 #likes {
     display: flex;
     width: 30vw;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 #country {
     display: flex;
     width: 30vw;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .views {
-    width: 5rem;
+    width: 15rem;
     height: fit-content;
 }
 .likes {
-    width: 5rem;
+    width: 15rem;
     height: fit-content;
 }
+
 .country {
-    width: 5rem;
-    height: fit-content;
-}
-#country > img {
-    width: 5rem;
+    width: 15rem;
     height: fit-content;
 }
