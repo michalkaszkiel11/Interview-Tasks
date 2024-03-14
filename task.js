@@ -21,8 +21,30 @@ expenses = {
     "2023-04": {},
 };
 
+// function printDaysBeforeFirstSunday(month, expenses) {
+//     const daysBeforeSunday = [];
+//     const days = Object.keys(expenses[month]);
+
+//     for (const day of days) {
+//         const date = new Date(`${month}-${day}`);
+//         if (date.getDay() === 0) {
+//             // Dodaj numer niedzieli do tablicy i przerwij pętlę
+//             daysBeforeSunday.push(day);
+//             break;
+//         } else {
+//             // Dodaj numer bieżącego dnia do tablicy
+//             daysBeforeSunday.push(day);
+//         }
+//     }
+
+//     console.log("Days before first Sunday:", daysBeforeSunday);
+// }
+
+// // Testowanie funkcji
+// const month = "2023-03"; // Przykładowy miesiąc
+// printDaysBeforeFirstSunday(month, expenses);
+
 function get_median_of_first_week_expenses(expenses) {
-    let result;
     // Obliczanie mediany
     function calculateMedian(arr) {
         arr.sort((a, b) => a - b);
@@ -39,21 +61,23 @@ function get_median_of_first_week_expenses(expenses) {
     // Iteracja po miesiącach w wydatkach
     for (const month in expenses) {
         const firstWeekExpenses = [];
-        const days = Object.keys(expenses[month]);
+        const days = Object.keys(expenses[month]).sort((a, b) => a - b);
 
         // Iteracja po dniach każdego miesiąca
         for (const day of days) {
             const dailyExpenses = expenses[month][day];
+            console.log(dailyExpenses);
 
             // Połączenie wydatków różnych kategorii za pomocą flat() oraz przerwanie przy niedzieli
             firstWeekExpenses.push(...Object.values(dailyExpenses).flat());
-            if (new Date(`${month}-${day}`).getDay() === 0) {
-                break;
-            }
+            console.log(object);
+            // if (new Date(`${month}-${day}`).getDay() === 0) {
+            //     break;
+            // }
+            // const median = calculateMedian(firstWeekExpenses);
+            // medians.push(median);
         }
         // Obliczenie mediany dla wydatków do pierwszej niedzieli miesiąca
-        const median = calculateMedian(firstWeekExpenses);
-        medians.push(median);
     }
 
     // Obliczenie mediany z median
